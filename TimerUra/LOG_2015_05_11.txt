@@ -1,0 +1,1171 @@
+Mon May 11 14:49:23 BRT 2015 Criando arquivo de log : LOG_2015_05_11.txt
+Mon May 11 14:49:23 BRT 2015 Arquivo LOG_2015_04_11.txt não existe.
+Mon May 11 14:49:23 BRT 2015 Arquivo de log LOG_2015_05_11.txt foi criado.
+Mon May 11 14:49:23 BRT 2015 Início da execução da Task
+Mon May 11 14:49:23 BRT 2015 Está na hora marcada.
+Mon May 11 14:49:30 BRT 2015 Verificando se arquivo 110510.csv já existe ... [Aguarde]
+Mon May 11 14:49:30 BRT 2015 Arquivo 110510.csv não existe na rede
+Mon May 11 14:49:30 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 14:49:45 BRT 2015 Conectou
+Mon May 11 14:49:45 BRT 2015 Formatando SQL
+Mon May 11 14:49:45 BRT 2015 SQL Preparada :: SELECT   CHM_TIME , CHM_ANI , CHM_NUMINFOR , CHM_CAMPO1 as RAMAL , CHM_CAMPO2 as LOGINDAC , CHM_CAMPO3 as NOTA , CHM_CAMPO4 as TIPO_CLIENTE , CHM_CAMPO5 as SEGMENTO_CLIENTE , CHM_CAMPO6 as REGIONAL  , CHM_CAMPO7 as SOLICITACAO_ATENDIDA , CHM_CAMPO8 as NOTA_CONFIRMADA , CHM_CAMPO9 as HUNT_EXTENSION , CHM_CAMPO10 as OUTBOUND , CHM_CAMPO11 as PROTOCOLO_ATENDIMENTO , CHM_CAMPO12 as STATUS_ABORDAGEM , CHM_CAMPO13 as STATUS_DERIVACAO , CHM_IDSITE FROM TB_CHAMADA_CHM_EX  WHERE CHM_TIME >= to_date('11/05/2015 10:00:00','dd/mm/yyyy hh24:mi:ss') AND CHM_TIME   <  to_date('11/05/2015 13:00:00','dd/mm/yyyy hh24:mi:ss') 
+Mon May 11 14:49:46 BRT 2015 Início da execução
+Mon May 11 14:49:46 BRT 2015 Fim da execução da Query
+Mon May 11 14:49:46 BRT 2015 Início do preenchimento do arquivo local. [Aguarde ...]
+Mon May 11 14:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 14:52:13 BRT 2015 Início da execução da Task
+Mon May 11 14:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 14:52:19 BRT 2015 Verificando se arquivo 110510.csv já existe ... [Aguarde]
+Mon May 11 14:52:19 BRT 2015 Arquivo 110510.csv não existe na rede
+Mon May 11 14:52:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 14:52:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 14:52:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 14:52:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 14:56:18 BRT 2015 Arquivo local temporário foi criado
+Mon May 11 14:56:24 BRT 2015 Arquivo 110510.csv não existe.
+Mon May 11 14:56:24 BRT 2015 A cópia do arquivo para a rede iniciou.
+Mon May 11 14:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 14:57:13 BRT 2015 Início da execução da Task
+Mon May 11 14:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 14:57:20 BRT 2015 Verificando se arquivo 110510.csv já existe ... [Aguarde]
+Mon May 11 14:57:20 BRT 2015 Arquivo 110510.csv já existe na rede
+Mon May 11 14:57:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 14:57:43 BRT 2015 O arquivo já foi copiado com sucesso para a pasta na rede.
+Mon May 11 14:57:43 BRT 2015 Arquivo local foi deletado com sucesso !
+Mon May 11 14:57:43 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 14:57:43 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 14:57:43 BRT 2015 Início da execução da Task
+Mon May 11 14:57:43 BRT 2015 Está na hora marcada.
+Mon May 11 14:57:43 BRT 2015 Verificando se arquivo 110510.csv já existe ... [Aguarde]
+Mon May 11 14:57:43 BRT 2015 Arquivo 110510.csv já existe na rede
+Mon May 11 14:57:43 BRT 2015 Arquivo já existia na pasta da rede
+Mon May 11 14:57:43 BRT 2015 O arquivo já foi copiado com sucesso para a pasta na rede.
+Mon May 11 14:57:43 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 14:59:23 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 14:59:24 BRT 2015 Início da execução da Task
+Mon May 11 14:59:24 BRT 2015 Está na hora marcada.
+Mon May 11 14:59:30 BRT 2015 Verificando se arquivo 110510.csv já existe ... [Aguarde]
+Mon May 11 14:59:30 BRT 2015 Arquivo 110510.csv já existe na rede
+Mon May 11 14:59:30 BRT 2015 Arquivo já existia na pasta da rede
+Mon May 11 14:59:30 BRT 2015 O arquivo já foi copiado com sucesso para a pasta na rede.
+Mon May 11 14:59:30 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:02:13 BRT 2015 Início da execução da Task
+Mon May 11 15:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:02:19 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:02:19 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:02:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:02:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:02:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:02:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:07:13 BRT 2015 Início da execução da Task
+Mon May 11 15:07:14 BRT 2015 Está na hora marcada.
+Mon May 11 15:07:20 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:07:20 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:07:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:07:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:07:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:07:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:12:13 BRT 2015 Início da execução da Task
+Mon May 11 15:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:12:21 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:12:21 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:12:21 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:12:42 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:12:42 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:12:42 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:17:13 BRT 2015 Início da execução da Task
+Mon May 11 15:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:17:19 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:17:19 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:17:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:17:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:17:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:17:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:22:13 BRT 2015 Início da execução da Task
+Mon May 11 15:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:22:21 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:22:21 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:22:21 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:22:42 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:22:42 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:22:42 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:27:13 BRT 2015 Início da execução da Task
+Mon May 11 15:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:27:19 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:27:19 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:27:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:27:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:27:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:27:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:32:13 BRT 2015 Início da execução da Task
+Mon May 11 15:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:32:20 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:32:20 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:32:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:32:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:32:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:32:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:37:13 BRT 2015 Início da execução da Task
+Mon May 11 15:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:37:19 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:37:19 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:37:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:37:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:37:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:37:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:42:13 BRT 2015 Início da execução da Task
+Mon May 11 15:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:42:19 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:42:19 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:42:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:42:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:42:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:42:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:47:13 BRT 2015 Início da execução da Task
+Mon May 11 15:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:47:23 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:47:23 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:47:23 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:47:44 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:47:44 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:47:44 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:52:13 BRT 2015 Início da execução da Task
+Mon May 11 15:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:52:19 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:52:19 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:52:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:52:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:52:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:52:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 15:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 15:57:13 BRT 2015 Início da execução da Task
+Mon May 11 15:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 15:57:19 BRT 2015 Verificando se arquivo 110511.csv já existe ... [Aguarde]
+Mon May 11 15:57:19 BRT 2015 Arquivo 110511.csv não existe na rede
+Mon May 11 15:57:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 15:57:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 15:57:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 15:57:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:02:13 BRT 2015 Início da execução da Task
+Mon May 11 16:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:02:19 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:02:19 BRT 2015 Arquivo 110512.csv não existe na rede
+Mon May 11 16:02:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 16:02:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 16:02:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 16:02:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:07:13 BRT 2015 Início da execução da Task
+Mon May 11 16:07:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:07:20 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:07:20 BRT 2015 Arquivo 110512.csv não existe na rede
+Mon May 11 16:07:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 16:07:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 16:07:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 16:07:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:12:13 BRT 2015 Início da execução da Task
+Mon May 11 16:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:12:20 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:12:20 BRT 2015 Arquivo 110512.csv não existe na rede
+Mon May 11 16:12:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 16:12:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 16:12:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 16:12:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:17:13 BRT 2015 Início da execução da Task
+Mon May 11 16:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:17:19 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:17:19 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:17:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:22:13 BRT 2015 Início da execução da Task
+Mon May 11 16:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:22:20 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:22:20 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:22:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:27:13 BRT 2015 Início da execução da Task
+Mon May 11 16:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:27:20 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:27:20 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:27:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:32:13 BRT 2015 Início da execução da Task
+Mon May 11 16:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:32:19 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:32:19 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:32:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:37:13 BRT 2015 Início da execução da Task
+Mon May 11 16:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:37:19 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:37:19 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:37:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:42:13 BRT 2015 Início da execução da Task
+Mon May 11 16:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:42:20 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:42:20 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:42:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:47:13 BRT 2015 Início da execução da Task
+Mon May 11 16:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:47:19 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:47:19 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:47:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:52:13 BRT 2015 Início da execução da Task
+Mon May 11 16:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:52:19 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:52:19 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:52:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 16:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 16:57:13 BRT 2015 Início da execução da Task
+Mon May 11 16:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 16:57:20 BRT 2015 Verificando se arquivo 110512.csv já existe ... [Aguarde]
+Mon May 11 16:57:20 BRT 2015 Arquivo 110512.csv já existe na rede
+Mon May 11 16:57:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:02:13 BRT 2015 Início da execução da Task
+Mon May 11 17:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:02:19 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:02:19 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:02:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:02:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:02:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:02:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:07:13 BRT 2015 Início da execução da Task
+Mon May 11 17:07:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:07:19 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:07:19 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:07:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:07:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:07:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:07:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:12:13 BRT 2015 Início da execução da Task
+Mon May 11 17:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:12:19 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:12:19 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:12:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:12:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:12:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:12:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:17:13 BRT 2015 Início da execução da Task
+Mon May 11 17:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:17:19 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:17:19 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:17:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:17:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:17:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:17:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:22:13 BRT 2015 Início da execução da Task
+Mon May 11 17:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:22:19 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:22:19 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:22:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:22:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:22:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:22:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:27:13 BRT 2015 Início da execução da Task
+Mon May 11 17:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:27:20 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:27:20 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:27:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:27:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:27:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:27:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:32:13 BRT 2015 Início da execução da Task
+Mon May 11 17:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:32:19 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:32:19 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:32:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:32:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:32:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:32:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:37:13 BRT 2015 Início da execução da Task
+Mon May 11 17:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:37:19 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:37:19 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:37:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:37:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:37:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:37:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:42:13 BRT 2015 Início da execução da Task
+Mon May 11 17:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:42:20 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:42:20 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:42:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:42:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:42:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:42:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:47:13 BRT 2015 Início da execução da Task
+Mon May 11 17:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:47:20 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:47:20 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:47:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:47:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:47:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:47:42 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:52:13 BRT 2015 Início da execução da Task
+Mon May 11 17:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:52:19 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:52:19 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:52:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:52:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:52:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:52:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 17:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 17:57:13 BRT 2015 Início da execução da Task
+Mon May 11 17:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 17:57:20 BRT 2015 Verificando se arquivo 110513.csv já existe ... [Aguarde]
+Mon May 11 17:57:20 BRT 2015 Arquivo 110513.csv não existe na rede
+Mon May 11 17:57:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 17:57:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 17:57:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 17:57:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:02:13 BRT 2015 Início da execução da Task
+Mon May 11 18:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:02:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:02:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:02:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:02:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:02:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:02:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:07:13 BRT 2015 Início da execução da Task
+Mon May 11 18:07:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:07:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:07:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:07:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:07:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:07:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:07:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:12:13 BRT 2015 Início da execução da Task
+Mon May 11 18:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:12:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:12:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:12:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:12:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:12:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:12:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:17:13 BRT 2015 Início da execução da Task
+Mon May 11 18:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:17:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:17:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:17:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:17:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:17:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:17:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:22:13 BRT 2015 Início da execução da Task
+Mon May 11 18:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:22:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:22:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:22:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:22:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:22:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:22:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:27:13 BRT 2015 Início da execução da Task
+Mon May 11 18:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:27:20 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:27:20 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:27:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:27:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:27:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:27:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:32:13 BRT 2015 Início da execução da Task
+Mon May 11 18:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:32:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:32:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:32:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:32:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:32:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:32:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:37:13 BRT 2015 Início da execução da Task
+Mon May 11 18:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:37:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:37:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:37:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:37:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:37:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:37:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:42:13 BRT 2015 Início da execução da Task
+Mon May 11 18:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:42:20 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:42:20 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:42:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:42:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:42:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:42:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:47:13 BRT 2015 Início da execução da Task
+Mon May 11 18:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:47:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:47:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:47:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:47:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:47:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:47:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:52:13 BRT 2015 Início da execução da Task
+Mon May 11 18:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:52:19 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:52:19 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:52:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:52:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:52:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:52:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 18:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 18:57:13 BRT 2015 Início da execução da Task
+Mon May 11 18:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 18:57:20 BRT 2015 Verificando se arquivo 110514.csv já existe ... [Aguarde]
+Mon May 11 18:57:20 BRT 2015 Arquivo 110514.csv não existe na rede
+Mon May 11 18:57:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 18:57:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 18:57:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 18:57:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:02:13 BRT 2015 Início da execução da Task
+Mon May 11 19:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:02:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:02:19 BRT 2015 Arquivo 110515.csv não existe na rede
+Mon May 11 19:02:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 19:02:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 19:02:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 19:02:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:07:13 BRT 2015 Início da execução da Task
+Mon May 11 19:07:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:07:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:07:19 BRT 2015 Arquivo 110515.csv não existe na rede
+Mon May 11 19:07:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 19:07:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 19:07:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 19:07:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:12:13 BRT 2015 Início da execução da Task
+Mon May 11 19:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:12:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:12:19 BRT 2015 Arquivo 110515.csv não existe na rede
+Mon May 11 19:12:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 19:12:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 19:12:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 19:12:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:17:13 BRT 2015 Início da execução da Task
+Mon May 11 19:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:17:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:17:19 BRT 2015 Arquivo 110515.csv não existe na rede
+Mon May 11 19:17:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 19:17:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 19:17:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 19:17:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:22:13 BRT 2015 Início da execução da Task
+Mon May 11 19:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:22:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:22:19 BRT 2015 Arquivo 110515.csv já existe na rede
+Mon May 11 19:22:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:27:13 BRT 2015 Início da execução da Task
+Mon May 11 19:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:27:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:27:19 BRT 2015 Arquivo 110515.csv já existe na rede
+Mon May 11 19:27:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:32:13 BRT 2015 Início da execução da Task
+Mon May 11 19:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:32:20 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:32:20 BRT 2015 Arquivo 110515.csv já existe na rede
+Mon May 11 19:32:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:37:13 BRT 2015 Início da execução da Task
+Mon May 11 19:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:37:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:37:19 BRT 2015 Arquivo 110515.csv já existe na rede
+Mon May 11 19:37:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:42:13 BRT 2015 Início da execução da Task
+Mon May 11 19:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:42:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:42:19 BRT 2015 Arquivo 110515.csv já existe na rede
+Mon May 11 19:42:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:47:13 BRT 2015 Início da execução da Task
+Mon May 11 19:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:47:20 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:47:20 BRT 2015 Arquivo 110515.csv já existe na rede
+Mon May 11 19:47:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:52:14 BRT 2015 Início da execução da Task
+Mon May 11 19:52:14 BRT 2015 Está na hora marcada.
+Mon May 11 19:52:20 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:52:20 BRT 2015 Arquivo 110515.csv já existe na rede
+Mon May 11 19:52:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 19:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 19:57:13 BRT 2015 Início da execução da Task
+Mon May 11 19:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 19:57:19 BRT 2015 Verificando se arquivo 110515.csv já existe ... [Aguarde]
+Mon May 11 19:57:19 BRT 2015 Arquivo 110515.csv já existe na rede
+Mon May 11 19:57:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:02:13 BRT 2015 Início da execução da Task
+Mon May 11 20:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:02:19 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:02:19 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:02:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:02:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:02:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:02:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:07:13 BRT 2015 Início da execução da Task
+Mon May 11 20:07:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:07:19 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:07:19 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:07:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:07:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:07:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:07:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:12:13 BRT 2015 Início da execução da Task
+Mon May 11 20:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:12:20 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:12:20 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:12:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:12:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:12:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:12:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:17:13 BRT 2015 Início da execução da Task
+Mon May 11 20:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:17:19 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:17:19 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:17:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:17:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:17:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:17:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:22:13 BRT 2015 Início da execução da Task
+Mon May 11 20:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:22:19 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:22:19 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:22:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:22:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:22:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:22:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:27:13 BRT 2015 Início da execução da Task
+Mon May 11 20:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:27:19 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:27:20 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:27:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:27:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:27:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:27:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:32:13 BRT 2015 Início da execução da Task
+Mon May 11 20:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:32:20 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:32:20 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:32:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:32:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:32:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:32:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:37:13 BRT 2015 Início da execução da Task
+Mon May 11 20:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:37:19 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:37:19 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:37:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:37:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:37:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:37:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:42:13 BRT 2015 Início da execução da Task
+Mon May 11 20:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:42:20 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:42:20 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:42:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:42:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:42:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:42:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:47:13 BRT 2015 Início da execução da Task
+Mon May 11 20:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:47:19 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:47:19 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:47:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:47:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:47:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:47:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:52:13 BRT 2015 Início da execução da Task
+Mon May 11 20:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:52:19 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:52:19 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:52:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:52:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:52:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:52:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 20:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 20:57:13 BRT 2015 Início da execução da Task
+Mon May 11 20:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 20:57:20 BRT 2015 Verificando se arquivo 110516.csv já existe ... [Aguarde]
+Mon May 11 20:57:20 BRT 2015 Arquivo 110516.csv não existe na rede
+Mon May 11 20:57:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 20:57:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 20:57:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 20:57:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:02:13 BRT 2015 Início da execução da Task
+Mon May 11 21:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:02:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:02:19 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:02:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:02:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:02:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:02:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:07:13 BRT 2015 Início da execução da Task
+Mon May 11 21:07:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:07:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:07:20 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:07:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:07:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:07:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:07:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:12:13 BRT 2015 Início da execução da Task
+Mon May 11 21:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:12:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:12:19 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:12:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:12:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:12:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:12:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:17:13 BRT 2015 Início da execução da Task
+Mon May 11 21:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:17:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:17:19 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:17:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:17:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:17:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:17:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:22:13 BRT 2015 Início da execução da Task
+Mon May 11 21:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:22:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:22:19 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:22:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:22:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:22:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:22:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:27:13 BRT 2015 Início da execução da Task
+Mon May 11 21:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:27:20 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:27:20 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:27:21 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:27:42 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:27:42 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:27:42 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:32:13 BRT 2015 Início da execução da Task
+Mon May 11 21:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:32:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:32:19 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:32:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:32:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:32:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:32:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:37:13 BRT 2015 Início da execução da Task
+Mon May 11 21:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:37:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:37:19 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:37:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:37:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:37:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:37:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:42:13 BRT 2015 Início da execução da Task
+Mon May 11 21:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:42:20 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:42:20 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:42:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:42:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:42:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:42:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:47:13 BRT 2015 Início da execução da Task
+Mon May 11 21:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:47:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:47:19 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:47:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:47:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:47:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:47:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:52:13 BRT 2015 Início da execução da Task
+Mon May 11 21:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:52:20 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:52:20 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:52:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:52:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:52:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:52:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 21:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 21:57:13 BRT 2015 Início da execução da Task
+Mon May 11 21:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 21:57:19 BRT 2015 Verificando se arquivo 110517.csv já existe ... [Aguarde]
+Mon May 11 21:57:19 BRT 2015 Arquivo 110517.csv não existe na rede
+Mon May 11 21:57:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 21:57:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 21:57:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 21:57:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:02:13 BRT 2015 Início da execução da Task
+Mon May 11 22:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:02:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:02:19 BRT 2015 Arquivo 110518.csv não existe na rede
+Mon May 11 22:02:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 22:02:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 22:02:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 22:02:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:07:13 BRT 2015 Início da execução da Task
+Mon May 11 22:07:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:07:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:07:19 BRT 2015 Arquivo 110518.csv não existe na rede
+Mon May 11 22:07:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 22:07:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 22:07:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 22:07:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:12:13 BRT 2015 Início da execução da Task
+Mon May 11 22:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:12:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:12:19 BRT 2015 Arquivo 110518.csv não existe na rede
+Mon May 11 22:12:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 22:12:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 22:12:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 22:12:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:17:13 BRT 2015 Início da execução da Task
+Mon May 11 22:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:17:20 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:17:20 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:17:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:22:13 BRT 2015 Início da execução da Task
+Mon May 11 22:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:22:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:22:19 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:22:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:27:13 BRT 2015 Início da execução da Task
+Mon May 11 22:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:27:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:27:19 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:27:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:32:13 BRT 2015 Início da execução da Task
+Mon May 11 22:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:32:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:32:19 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:32:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:37:13 BRT 2015 Início da execução da Task
+Mon May 11 22:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:37:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:37:19 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:37:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:42:13 BRT 2015 Início da execução da Task
+Mon May 11 22:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:42:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:42:19 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:42:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:47:13 BRT 2015 Início da execução da Task
+Mon May 11 22:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:47:20 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:47:20 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:47:20 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:52:13 BRT 2015 Início da execução da Task
+Mon May 11 22:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:52:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:52:19 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:52:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 22:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 22:57:13 BRT 2015 Início da execução da Task
+Mon May 11 22:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 22:57:19 BRT 2015 Verificando se arquivo 110518.csv já existe ... [Aguarde]
+Mon May 11 22:57:19 BRT 2015 Arquivo 110518.csv já existe na rede
+Mon May 11 22:57:19 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:02:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:02:13 BRT 2015 Início da execução da Task
+Mon May 11 23:02:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:02:19 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:02:19 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:02:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:02:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:02:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:02:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:07:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:07:13 BRT 2015 Início da execução da Task
+Mon May 11 23:07:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:07:20 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:07:20 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:07:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:07:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:07:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:07:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:12:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:12:13 BRT 2015 Início da execução da Task
+Mon May 11 23:12:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:12:19 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:12:19 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:12:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:12:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:12:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:12:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:17:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:17:13 BRT 2015 Início da execução da Task
+Mon May 11 23:17:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:17:19 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:17:19 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:17:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:17:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:17:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:17:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:22:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:22:13 BRT 2015 Início da execução da Task
+Mon May 11 23:22:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:22:20 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:22:20 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:22:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:22:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:22:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:22:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:27:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:27:13 BRT 2015 Início da execução da Task
+Mon May 11 23:27:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:27:19 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:27:19 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:27:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:27:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:27:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:27:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:32:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:32:13 BRT 2015 Início da execução da Task
+Mon May 11 23:32:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:32:19 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:32:19 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:32:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:32:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:32:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:32:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:37:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:37:13 BRT 2015 Início da execução da Task
+Mon May 11 23:37:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:37:20 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:37:20 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:37:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:37:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:37:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:37:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:42:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:42:13 BRT 2015 Início da execução da Task
+Mon May 11 23:42:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:42:20 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:42:20 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:42:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:42:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:42:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:42:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:47:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:47:13 BRT 2015 Início da execução da Task
+Mon May 11 23:47:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:47:19 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:47:19 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:47:19 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:47:40 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:47:40 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:47:40 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:52:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:52:13 BRT 2015 Início da execução da Task
+Mon May 11 23:52:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:52:20 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:52:20 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:52:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:52:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:52:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:52:41 BRT 2015 A task finalizou. 
+ 
+
+Mon May 11 23:57:13 BRT 2015 Arquivo de log LOG_2015_05_11.txt já foi criado.
+Mon May 11 23:57:13 BRT 2015 Início da execução da Task
+Mon May 11 23:57:13 BRT 2015 Está na hora marcada.
+Mon May 11 23:57:20 BRT 2015 Verificando se arquivo 110519.csv já existe ... [Aguarde]
+Mon May 11 23:57:20 BRT 2015 Arquivo 110519.csv não existe na rede
+Mon May 11 23:57:20 BRT 2015 Tentando conectar ... [Aguarde]
+Mon May 11 23:57:41 BRT 2015 Exceção de E/S: The Network Adapter could not establish the connection
+Mon May 11 23:57:41 BRT 2015 Houve um problema na conexão com o banco de dados.
+Mon May 11 23:57:41 BRT 2015 A task finalizou. 
+ 
+
