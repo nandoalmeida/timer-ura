@@ -3,7 +3,6 @@ package br.com.vivo;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,30 +20,15 @@ public class Arquivo {
 	public static File logDelete;
 	public static SmbFile fileSmb;
 	public static boolean conexaoDeRede = true;
-	// public static boolean conexaoDeRede;
-
-	/*
-	 * private static String dominio = "POLITEC"; private static String name =
-	 * "fnunes"; private static String password = "---"; private static String
-	 * servidor = "10.71.252.4"; private static String pasta =
-	 * "/usu/Publico/Fernando/ura/teste/";
-	 */
-
 	private static String dominio = "POLITEC";
 	private static String name = "MIS_URA";
 	private static String password = "Usuarios2013sim";
 	private static String servidor = "10.128.222.105";
 	private static String pasta = "/ura/teste/";
 
-	/*
-	 * private static String dominio = "POLITEC"; private static String name =
-	 * "MIS_URAasd"; private static String password = "Uasd"; private static
-	 * String servidor = "10.128.200.200"; private static String pasta =
-	 * "/ura/teste/";
-	 */
-
-	private static String nomeArquivo;
+	public static String nomeArquivo;
 	private static String extensao = "csv";
+	public static Calendar calendar;
 
 	private static NtlmPasswordAuthentication auth;
 	private static String url;
@@ -103,6 +87,20 @@ public class Arquivo {
 			log(e.getMessage());
 		}
 	}
+	
+	public static void logCount(String linha) {
+		FileWriter writer;
+		try {
+			writer = new FileWriter("logcount.txt", true);
+			writer.append(linha);
+			writer.append("\t - \t");
+			writer.flush();
+			writer.close();
+		} catch (IOException e) {
+			log(e.getMessage());
+		}
+	}
+	
 
 	public static void escreve(String linha) {
 		SmbFileOutputStream sfos;
@@ -167,14 +165,15 @@ public class Arquivo {
 	}
 
 	public static String nomeArquivoFormatado() {
+		
 		Calendar c = Calendar.getInstance();
-		c.add(Calendar.HOUR, -4);
+		calendar = c;
+		c.add(Calendar.HOUR, - Task.horasAntes);
 		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
 		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
 		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
 		nomeArquivo = d + m + h + "." + extensao;
-		//return "teste_" + nomeArquivo;
-		return "teste_xxx";
+		return nomeArquivo;
 	}
 
 	public static String nomeArquivoLog() {
@@ -195,38 +194,15 @@ public class Arquivo {
 		nomeArquivo = "LOG_" + a + "_" + m + "_" + d + ".txt";
 		return nomeArquivo;
 	}
-
-	@Deprecated
-	public static void copiarDaRedeParaLocal() {
-		SmbFile smbFile = null;
-		auth = new NtlmPasswordAuthentication(dominio, name, password);
-		url = "smb://" + servidor + pasta + "teste.txt";
-		String destFilename;
-		FileOutputStream fileOutputStream;
-		InputStream fileInputStream;
-		byte[] buf;
-		int len;
-		buf = new byte[32 * 1024 * 1024];
-
-		try {
-			smbFile = new SmbFile(url, auth);
-			destFilename = smbFile.getName();
-			fileOutputStream = new FileOutputStream(destFilename);
-			fileInputStream = smbFile.getInputStream();
-			while ((len = fileInputStream.read(buf)) > 0) {
-				fileOutputStream.write(buf, 0, len);
-			}
-			fileInputStream.close();
-			fileOutputStream.close();
-		} catch (MalformedURLException e) {
-			log(e.getMessage());
-		} catch (FileNotFoundException e) {
-			log(e.getMessage());
-		} catch (IOException e) {
-			log(e.getMessage());
-		} finally {
-			log("O arquivo já foi copiado");
-		}
+	
+	public static String nomeArquivoExcelASerRemovido() {
+		Calendar c = calendar;
+		c.add(Calendar.HOUR, -Task.horasAntes);
+		c.add(Calendar.MONTH, -1);
+		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
+		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
+		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
+		return d + m + h + "." + extensao;
 	}
 
 	public static void copiarDoLocalParaRede() {
@@ -240,7 +216,7 @@ public class Arquivo {
 				int len;
 				buf = new byte[32 * 1024 * 1024];
 				try {
-					file = new File(nomeArquivoFormatado());
+					file = new File(Arquivo.nomeArquivo);
 					SmbFileOutputStream smbFileOutputStream = new SmbFileOutputStream(fileSmb);
 					fileInputStream = new FileInputStream(file.getAbsolutePath());
 					while ((len = fileInputStream.read(buf)) > 0) {
@@ -265,7 +241,7 @@ public class Arquivo {
 
 	public static boolean deletarArquivoLocal() {
 		boolean retorno = true;
-		File file = new File(nomeArquivoFormatado());
+		File file = new File(nomeArquivoExcelASerRemovido());
 		if (file.exists()) {
 			if (file.delete()) {
 				retorno = true;

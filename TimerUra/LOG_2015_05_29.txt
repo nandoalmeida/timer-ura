@@ -1,0 +1,101 @@
+Fri May 29 09:49:55 BRT 2015 Criando arquivo de log : LOG_2015_05_29.txt
+Fri May 29 09:49:55 BRT 2015 Arquivo LOG_2015_04_29.txt não existe.
+Fri May 29 09:49:56 BRT 2015 Arquivo de log LOG_2015_05_29.txt foi criado.
+Fri May 29 09:49:56 BRT 2015 Início da execução da Task
+Fri May 29 09:49:56 BRT 2015 Não está na hora marcada. 
+ 
+
+Fri May 29 09:53:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 09:53:24 BRT 2015 Início da execução da Task
+Fri May 29 09:53:24 BRT 2015 Está na hora marcada.
+Fri May 29 09:53:24 BRT 2015 null
+Fri May 29 09:53:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 09:54:14 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 09:54:14 BRT 2015 Início da execução da Task
+Fri May 29 09:54:14 BRT 2015 Não está na hora marcada. 
+ 
+
+Fri May 29 10:09:37 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 10:09:37 BRT 2015 Início da execução da Task
+Fri May 29 10:09:37 BRT 2015 Não está na hora marcada. 
+ 
+
+Fri May 29 10:18:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 10:18:24 BRT 2015 Início da execução da Task
+Fri May 29 10:18:24 BRT 2015 Está na hora marcada.
+Fri May 29 10:18:24 BRT 2015 null
+Fri May 29 10:18:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 10:43:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 10:43:24 BRT 2015 Início da execução da Task
+Fri May 29 10:43:24 BRT 2015 Está na hora marcada.
+Fri May 29 10:43:24 BRT 2015 null
+Fri May 29 10:43:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 11:08:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 11:08:24 BRT 2015 Início da execução da Task
+Fri May 29 11:08:24 BRT 2015 Está na hora marcada.
+Fri May 29 11:08:24 BRT 2015 null
+Fri May 29 11:08:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 11:33:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 11:33:24 BRT 2015 Início da execução da Task
+Fri May 29 11:33:24 BRT 2015 Está na hora marcada.
+Fri May 29 11:33:24 BRT 2015 null
+Fri May 29 11:33:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 11:58:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 11:58:24 BRT 2015 Início da execução da Task
+Fri May 29 11:58:24 BRT 2015 Está na hora marcada.
+Fri May 29 11:58:24 BRT 2015 null
+Fri May 29 11:58:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 12:23:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 12:23:24 BRT 2015 Início da execução da Task
+Fri May 29 12:23:24 BRT 2015 Está na hora marcada.
+Fri May 29 12:23:24 BRT 2015 null
+Fri May 29 12:23:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 12:48:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 12:48:24 BRT 2015 Início da execução da Task
+Fri May 29 12:48:24 BRT 2015 Está na hora marcada.
+Fri May 29 12:48:24 BRT 2015 null
+Fri May 29 12:48:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 13:13:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 13:13:24 BRT 2015 Início da execução da Task
+Fri May 29 13:13:24 BRT 2015 Está na hora marcada.
+Fri May 29 13:13:24 BRT 2015 null
+Fri May 29 13:13:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 13:38:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 13:38:24 BRT 2015 Início da execução da Task
+Fri May 29 13:38:24 BRT 2015 Está na hora marcada.
+Fri May 29 13:38:24 BRT 2015 null
+Fri May 29 13:38:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 14:03:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 14:03:24 BRT 2015 Início da execução da Task
+Fri May 29 14:03:24 BRT 2015 Está na hora marcada.
+Fri May 29 14:03:24 BRT 2015 null
+Fri May 29 14:03:24 BRT 2015 A task finalizou. 
+ 
+
+Fri May 29 14:28:24 BRT 2015 Arquivo de log LOG_2015_05_29.txt já foi criado.
+Fri May 29 14:28:24 BRT 2015 Início da execução da Task
+Fri May 29 14:28:24 BRT 2015 Está na hora marcada.
+Fri May 29 14:28:24 BRT 2015 null
+Fri May 29 14:28:24 BRT 2015 A task finalizou. 
+ 
+

@@ -10,56 +10,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Relatorio {
-
-	@Deprecated
-	public static void gerarArquivo() throws SQLException {
-		if (!Arquivo.existe()) {
-			String horaInicio = horaFormatada(calculaHora(-4));
-			String horaFim = horaFormatada(calculaHora(-1));
-			ResultSet rs = Conexao.consultar(horaInicio, horaFim);
-			Arquivo.escreve("CHM_TIME,");
-			Arquivo.escreve("CHM_ANI,");
-			Arquivo.escreve("CHM_NUMINFOR,");
-			Arquivo.escreve("RAMAL,");
-			Arquivo.escreve("LOGINDAC,");
-			Arquivo.escreve("NOTA,");
-			Arquivo.escreve("TIPO_CLIENTE,");
-			Arquivo.escreve("SEGMENTO_CLIENTE,");
-			Arquivo.escreve("REGIONAL,");
-			Arquivo.escreve("SOLICITACAO_ATENDIDA,");
-			Arquivo.escreve("NOTA_CONFIRMADA,");
-			Arquivo.escreve("HUNT_EXTENSION,");
-			Arquivo.escreve("OUTBOUND,");
-			Arquivo.escreve("PROTOCOLO_ATENDIMENTO,");
-			Arquivo.escreve("STATUS_ABORDAGEM,");
-			Arquivo.escreve("STATUS_DERIVACAO,");
-			Arquivo.escreve("CHM_IDSITE");
-			Arquivo.escreve("\r\n");
-			if (rs != null) {
-				while (rs.next()) {
-					Arquivo.escreve(rs.getDate("CHM_TIME").toString() + ",");
-					Arquivo.escreve(escreveValorColunaString(rs, "CHM_ANI", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "CHM_NUMINFOR", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "RAMAL", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "LOGINDAC", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "NOTA", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "TIPO_CLIENTE", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "SEGMENTO_CLIENTE", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "REGIONAL", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "SOLICITACAO_ATENDIDA", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "NOTA_CONFIRMADA", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "HUNT_EXTENSION", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "OUTBOUND", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "PROTOCOLO_ATENDIMENTO", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "STATUS_ABORDAGEM", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "STATUS_DERIVACAO", ","));
-					Arquivo.escreve(escreveValorColunaString(rs, "CHM_IDSITE", ""));
-					Arquivo.escreve("\r\n");
-				}
-			}
-			Conexao.closeConnnection();
-		}
-	}
+	
+	public static Long countSQL;
+	public static Long countLinesLocal;
+	public static Long countLinesRemote;
 
 	private static String escreveValorColunaString(ResultSet rs, String coluna, String sufixo) {
 		String valorColuna = "\"\"" + sufixo;
@@ -92,33 +46,18 @@ public class Relatorio {
 
 	public static void gerarArquivoLocal() throws SQLException {
 		if (Arquivo.conexaoDeRede) {
-			//if (!Arquivo.existe()) {
-			if (true) {
-				/*
-				String horaInicio = horaFormatada(calculaHora(-4));
-				String horaFim = horaFormatada(calculaHora(-1));
-				*/
-				String horaInicio = "12/05/2015 21:00:00";
-				String horaFim = "13/05/2015 00:00:00";
+			if (!Arquivo.existe()) {
+				String horaInicio = horaFormatada(calculaHora(-Task.horasAntes));
+				String horaFim = horaFormatada(calculaHora(-(Task.horasAntes - Task.intervaloDeHoras)));
+				calcularCountSQL(horaInicio, horaFim);
+				Arquivo.logCount(Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
 				ResultSet rs = Conexao.consultar(horaInicio, horaFim);
-				
-				
-				ResultSet rsCount = Conexao.consultarCount(horaInicio, horaFim);
-				Long  total = 0L;
-				if (rsCount != null) {
-					while (rsCount.next()) {
-						total = rsCount.getLong(1);
-					}
-					System.out.println("COUNT >> "+ total);
-				}
-						
-				
-				
-				
+				Arquivo.logCount(countSQL.toString());
+				countLinesLocal = 0L;
 				if (Conexao.isConnected) {
 					Arquivo.log("Início do preenchimento do arquivo local. [Aguarde ...]");
 					try {
-						FileWriter writer = new FileWriter(Arquivo.nomeArquivoFormatado());
+						FileWriter writer = new FileWriter(Arquivo.nomeArquivo);
 						writer.append("CHM_TIME,");
 						writer.append("\"CHM_ANI\",");
 						writer.append("\"CHM_NUMINFOR\",");
@@ -158,10 +97,12 @@ public class Relatorio {
 								writer.append(escreveValorColunaString(rs, "CHM_IDSITE", ""));
 								writer.append("\r\n");
 								writer.flush();
+								countLinesLocal++;
 							}
 						}
 						writer.close();
 						Arquivo.log("Arquivo local temporário foi criado");
+						Arquivo.logCount(countLinesLocal.toString()+"\r\n");
 					} catch (IOException e) {
 						e.printStackTrace();
 					} finally {
@@ -169,11 +110,21 @@ public class Relatorio {
 					}
 				} else {
 					Arquivo.log("Houve um problema na conexão com o banco de dados.");
-
 				}
 			}
 		} else {
 			Arquivo.log("Houve um problema na conexão de rede.");
+		}
+	}
+
+	private static void calcularCountSQL(String horaInicio, String horaFim) throws SQLException {
+		ResultSet rsCount = Conexao.consultarCount(horaInicio, horaFim);
+		Long  total = 0L;
+		if (rsCount != null) {
+			while (rsCount.next()) {
+				total = rsCount.getLong(1);
+			}
+			countSQL = total;
 		}
 	}
 

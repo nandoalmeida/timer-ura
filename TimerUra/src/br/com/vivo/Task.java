@@ -7,9 +7,10 @@ import java.util.TimerTask;
 import jcifs.smb.SmbException;
 
 class Task extends TimerTask {
-	private static int[] horasAgendadas;
-	private static final int intervaloDeHoras = 1;
-	private static final int horaInicialDoDia = 0;
+	public static int[] horasAgendadas;
+	public static final int intervaloDeHoras = 3;
+	public static final int horaInicialDoDia = 0;
+	public static final int horasAntes = 6;
 
 	public Task() {
 		preencheVetor();
@@ -27,6 +28,12 @@ class Task extends TimerTask {
 			}
 			i++;
 		}
+		System.out.print("{");
+		System.out.print(horasAgendadas[0]);
+		for (int j=1;j<horasAgendadas.length;j++){
+			System.out.print(","+horasAgendadas[j]);
+		}
+		System.out.println("}");
 	}
 
 	public void run() {
@@ -42,7 +49,7 @@ class Task extends TimerTask {
 						Arquivo.copiarDoLocalParaRede();
 						if (Arquivo.fileSmb.exists()) {
 							Arquivo.log("O arquivo já foi copiado com sucesso para a pasta na rede.");
-							//Arquivo.deletarArquivoLocal();
+							Arquivo.deletarArquivoLocal();
 						} else {
 							Arquivo.log("Falha no momento de copiar o arquivo para a pasta na rede.");
 						}
