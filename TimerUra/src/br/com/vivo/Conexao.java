@@ -29,7 +29,7 @@ public class Conexao {
 	public static Connection getConnection() throws SQLException {
 
 		try {
-			Arquivo.log("Tentando conectar ... [Aguarde]");
+			Arquivo.log("Tentando conectar com o banco de dados ... [Aguarde]");
 			Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
 			con = DriverManager.getConnection("jdbc:oracle:thin:@//" + servidor + ":" + porta + "/" + nomeDeServico, usuario, senha);
 			isConnected = true;

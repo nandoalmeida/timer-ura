@@ -1,5 +1,7 @@
 package br.com.vivo;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,7 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.net.UnknownHostException;
 import java.util.Calendar;
 
 import jcifs.smb.NtlmPasswordAuthentication;
@@ -32,12 +33,14 @@ public class Arquivo {
 
 	private static NtlmPasswordAuthentication auth;
 	private static String url;
+	public static Long countLinesRemote;
 
-	public static void criarArquivoNaRede() {
+	public static void criarInstanciaFileSmb() {
 		try {
 			auth = new NtlmPasswordAuthentication(dominio, name, password);
 			url = "smb://" + servidor + pasta + nomeArquivoFormatado();
 			fileSmb = new SmbFile(url, auth);
+			log("Verificando se instancia " + fileSmb.getName() + " já existe ... [Aguarde]");
 			fileSmb.exists();
 		} catch (SmbException e) {
 			conexaoDeRede = false;
@@ -87,7 +90,7 @@ public class Arquivo {
 			log(e.getMessage());
 		}
 	}
-	
+
 	public static void logCount(String linha) {
 		FileWriter writer;
 		try {
@@ -100,26 +103,17 @@ public class Arquivo {
 			log(e.getMessage());
 		}
 	}
-	
 
-	public static void escreve(String linha) {
-		SmbFileOutputStream sfos;
-		try {
-			sfos = new SmbFileOutputStream(fileSmb);
-			sfos.write(linha.getBytes("UTF-8"));
-		} catch (SmbException e1) {
-			e1.printStackTrace();
-		} catch (MalformedURLException e1) {
-			e1.printStackTrace();
-		} catch (UnknownHostException e1) {
-			e1.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+	/*
+	 * public static void escreve(String linha) { SmbFileOutputStream sfos; try
+	 * { sfos = new SmbFileOutputStream(fileSmb);
+	 * sfos.write(linha.getBytes("UTF-8")); } catch (SmbException e1) {
+	 * e1.printStackTrace(); } catch (MalformedURLException e1) {
+	 * e1.printStackTrace(); } catch (UnknownHostException e1) {
+	 * e1.printStackTrace(); } catch (IOException e) { e.printStackTrace(); } }
+	 */
 
 	public static boolean existe() {
-		log("Verificando se arquivo " + fileSmb.getName() + " já existe ... [Aguarde]");
 		boolean existe = false;
 		try {
 			existe = fileSmb.exists();
@@ -165,15 +159,24 @@ public class Arquivo {
 	}
 
 	public static String nomeArquivoFormatado() {
-		
 		Calendar c = Calendar.getInstance();
 		calendar = c;
-		c.add(Calendar.HOUR, - Task.horasAntes);
+		c.add(Calendar.HOUR, -Task.horasAntes);
 		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
 		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
 		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
 		nomeArquivo = d + m + h + "." + extensao;
-		return nomeArquivo;
+		return "REMOVER__" + nomeArquivo;
+	}
+
+	public static String nomeArquivoFormatado(int hora) {
+		Calendar c = Calendar.getInstance();
+		calendar = c;
+		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
+		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
+		String h = String.format("%02d", hora);
+		nomeArquivo = d + m + h + "." + extensao;
+		return "REMOVER__" + nomeArquivo;
 	}
 
 	public static String nomeArquivoLog() {
@@ -194,7 +197,7 @@ public class Arquivo {
 		nomeArquivo = "LOG_" + a + "_" + m + "_" + d + ".txt";
 		return nomeArquivo;
 	}
-	
+
 	public static String nomeArquivoExcelASerRemovido() {
 		Calendar c = calendar;
 		c.add(Calendar.HOUR, -Task.horasAntes);
@@ -205,37 +208,72 @@ public class Arquivo {
 		return d + m + h + "." + extensao;
 	}
 
-	public static void copiarDoLocalParaRede() {
+	public static boolean copiarDoLocalParaRede() {
+		File file = null;
+		file = new File(Arquivo.nomeArquivo);
+		InputStream fileInputStream;
+		Long tamanhoArquivoRemotoEmBytes = 0L;
+		Long tamanhoArquivoLocalEmBytes = file.length();
+		boolean copiaRelizadaComSucesso = true;
 		try {
 			if (!fileSmb.exists()) {
-				log("Arquivo " + fileSmb.getName() + " não existe.");
+				Arquivo.log("-------------------------------------------------------");
+				log("Arquivo " + fileSmb.getName() + " não existe na pasta da rede.");
 				log("A cópia do arquivo para a rede iniciou.");
-				File file = null;
-				InputStream fileInputStream;
 				byte[] buf;
 				int len;
 				buf = new byte[32 * 1024 * 1024];
 				try {
-					file = new File(Arquivo.nomeArquivo);
 					SmbFileOutputStream smbFileOutputStream = new SmbFileOutputStream(fileSmb);
 					fileInputStream = new FileInputStream(file.getAbsolutePath());
 					while ((len = fileInputStream.read(buf)) > 0) {
 						smbFileOutputStream.write(buf, 0, len);
 					}
+					tamanhoArquivoRemotoEmBytes = fileSmb.length();
 					fileInputStream.close();
 					smbFileOutputStream.close();
 				} catch (MalformedURLException e) {
+					copiaRelizadaComSucesso = false;
 					log(e.getMessage());
+					deletarArquivoRemoto();
 				} catch (FileNotFoundException e) {
+					copiaRelizadaComSucesso = false;
 					log(e.getMessage());
+					deletarArquivoRemoto();
 				} catch (IOException e) {
+					copiaRelizadaComSucesso = false;
 					log(e.getMessage());
+					deletarArquivoRemoto();
+				} finally {
+					log("A cópia do arquivo para a rede finalizou.");
+					log("------------------------------------------------------");
+					copiaRelizadaComSucesso = validarTamanho(tamanhoArquivoRemotoEmBytes, tamanhoArquivoLocalEmBytes);
+					log("------------------------------------------------------");
 				}
 			} else {
 				log("Arquivo já existia na pasta da rede");
 			}
 		} catch (SmbException e) {
-			e.printStackTrace();
+			copiaRelizadaComSucesso = false;
+			log(e.getMessage());
+		}
+		return copiaRelizadaComSucesso;
+	}
+
+	private static boolean validarTamanho(Long tamanhoArquivoRemotoEmBytes, Long tamanhoArquivoLocalEmBytes) {
+		if (!tamanhoArquivoLocalEmBytes.equals(tamanhoArquivoRemotoEmBytes)) {
+			String msgLog = "Arquivos remoto e local possuem tamanhos diferentes em número de bytes. [local: ";
+			msgLog += tamanhoArquivoLocalEmBytes.toString();
+			msgLog += " , remoto: " + tamanhoArquivoRemotoEmBytes + " ]";
+			log(msgLog);
+			deletarArquivoRemoto();
+			return false;
+		} else {
+			String msgLog = "Arquivos remoto e local possuem tamanhos iguais em número de bytes. [local: ";
+			msgLog += tamanhoArquivoLocalEmBytes.toString();
+			msgLog += " , remoto: " + tamanhoArquivoRemotoEmBytes + " ]";
+			log(msgLog);
+			return true;
 		}
 	}
 
@@ -253,6 +291,62 @@ public class Arquivo {
 		}
 		return retorno;
 
+	}
+
+	public static void deletarArquivoRemoto() {
+		log("Arquivo remoto será removido.");
+		try {
+			if (fileSmb.exists()) {
+				fileSmb.delete();
+				log("Arquivo remoto foi removido com sucesso.");
+			}
+		} catch (SmbException e) {
+			log(e.getMessage());
+		}
+	}
+
+	public static int getBytesSizeOfFile(InputStream is) {
+		int size = 0;
+		size = getArrayBytes(is).length;
+		return size;
+	}
+
+	public static byte[] getArrayBytes(InputStream is) {
+		int len;
+		int size = 1024;
+		byte[] buf = {};
+		try {
+			if (is instanceof ByteArrayInputStream) {
+				size = is.available();
+				buf = new byte[size];
+				len = is.read(buf, 0, size);
+
+			} else {
+				ByteArrayOutputStream bos = new ByteArrayOutputStream();
+				buf = new byte[size];
+				while ((len = is.read(buf, 0, size)) != -1)
+					bos.write(buf, 0, len);
+				buf = bos.toByteArray();
+			}
+		} catch (IOException e) {
+			log(e.getMessage());
+		}
+		return buf;
+	}
+
+	public static boolean verificarSeArquivoExiste(String nomeArquivo) {
+		boolean result = false;
+		auth = new NtlmPasswordAuthentication(dominio, name, password);
+		url = "smb://" + servidor + pasta + nomeArquivo;
+		try {
+			fileSmb = new SmbFile(url, auth);
+			result = fileSmb.exists();
+		} catch (SmbException e) {
+			log(e.getMessage());
+		} catch (MalformedURLException e) {
+			log(e.getMessage());
+		}
+		return result;
 	}
 
 }
