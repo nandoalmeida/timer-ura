@@ -6,7 +6,7 @@ import java.util.TimerTask;
 
 class Task extends TimerTask {
 	public static int[] horasAgendadas;
-	public static final int intervaloDeHoras = 1;
+	public static final int intervaloDeHoras = 3;
 	public static final int horaInicialDoDia = 0;
 	public static final int horasAntes = 6;
 
@@ -16,6 +16,7 @@ class Task extends TimerTask {
 
 	public void run() {
 		criarArquivoLog();
+		log("############################################################################################################################################");
 		log("Início da execução da Task.");
 		if (horaMarcada()) {
 			log("Está na hora marcada.");
@@ -33,12 +34,14 @@ class Task extends TimerTask {
 			}
 		} else {
 			log("Não está na hora marcada.");
+			corrigirArquivosAusentes();
 		}
-		corrigirArquivosAusentes();
-		log("A task finalizou.");
+		log("A task finalizou.   ");
+		log("############################################################################################################################################ \r\n \r\n");
 	}
 
 	public static void preencheVetor() {
+
 		horasAgendadas = new int[24 / intervaloDeHoras];
 		horasAgendadas[0] = horaInicialDoDia;
 		int i = 1;
@@ -64,12 +67,11 @@ class Task extends TimerTask {
 		if (horaAusente < 0) {
 			log("Todos os arquivos do dia foram gerados corretamente até agora. \r\n \r\n");
 		} else {
-			//log("Arquivo " + Arquivo.nomeArquivoFormatado(horaAusente) + " não existe na rede.");
 			log("Arquivo " + Arquivo.nomeArquivoFormatado(horaAusente) + " será gerado fora da hora marcada.");
 			log("Início da geração do arquivo " + Arquivo.nomeArquivoFormatado(horaAusente) + ".");
 			gerarArquivoAusente(horaAusente);
 			log("Fim da geração do arquivo " + Arquivo.nomeArquivoFormatado(horaAusente) + ".");
-			log("------------------------------------------------------  \r\n \r\n");
+			log("------------------------------------------------------");
 		}
 	}
 
@@ -77,7 +79,7 @@ class Task extends TimerTask {
 		if (Arquivo.copiarDoLocalParaRede()) {
 			log("O arquivo já foi copiado com sucesso para a pasta na rede.");
 			log("-----------------------------------------------------------");
-			
+
 		} else {
 			log("Falha no momento de copiar o arquivo para a pasta na rede.");
 		}
@@ -98,11 +100,11 @@ class Task extends TimerTask {
 		int retorno = -1;
 		Calendar dataAtual = Calendar.getInstance();
 		int horaAtual = dataAtual.get(Calendar.HOUR_OF_DAY);
-		log(" \r\n \r\n ...  \r\n \r\n");
+		log("...  \r\n \r\n");
 		log("------------------------------------------------------");
 		log("Verificando se hoje os arquivos foram gerados corretamente ... [Aguarde]");
 
-		for (int i = 0; (horasAgendadas[i] < horaAtual); i++) {
+		for (int i = 0; ((i < horasAgendadas.length) && (horasAgendadas[i] < horaAtual)); i++) {
 			if (verificarSeArquivoExiste(Arquivo.nomeArquivoFormatado(horasAgendadas[i]))) {
 				log("Arquivo " + Arquivo.nomeArquivoFormatado(horasAgendadas[i]) + " já existe na rede.");
 			} else {

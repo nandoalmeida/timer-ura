@@ -5,6 +5,8 @@ import java.util.Timer;
 public class Main {
 	public static void main(String[] args) {
 		Timer timer = new Timer();
-		timer.scheduleAtFixedRate(new Task(), 1000, (5555 * 60 * 1000));
+		int delayInMiliseconds = 1000;
+		int intervalInMiliseconds = 25 * 60 * 1000;
+		timer.scheduleAtFixedRate(new Task(), delayInMiliseconds, intervalInMiliseconds);
 	}
 }

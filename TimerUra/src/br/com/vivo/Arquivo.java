@@ -70,9 +70,7 @@ public class Arquivo {
 				Arquivo.log("Arquivo " + nomeArquivoLogASerRemovido() + " não existe.");
 			}
 			Arquivo.log("Arquivo de log " + nomeArquivoLog() + " foi criado.");
-		} else {
-			Arquivo.log("Arquivo de log " + nomeArquivoLog() + " já foi criado.");
-		}
+		} 
 	}
 
 	public static void log(String linha) {
@@ -166,7 +164,7 @@ public class Arquivo {
 		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
 		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
 		nomeArquivo = d + m + h + "." + extensao;
-		return "REMOVER__" + nomeArquivo;
+		return nomeArquivo;
 	}
 
 	public static String nomeArquivoFormatado(int hora) {
@@ -176,7 +174,7 @@ public class Arquivo {
 		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
 		String h = String.format("%02d", hora);
 		nomeArquivo = d + m + h + "." + extensao;
-		return "REMOVER__" + nomeArquivo;
+		return nomeArquivo;
 	}
 
 	public static String nomeArquivoLog() {

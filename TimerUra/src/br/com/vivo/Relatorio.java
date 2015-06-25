@@ -122,13 +122,8 @@ public class Relatorio {
 	public static void gerarArquivoAusente(int horaInicial) throws SQLException {
 		if (Arquivo.conexaoDeRede) {
 			if (!Arquivo.existe()) {
-				//String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
-				
 				String horaInicio = horaFormatada(calculaHoraPassada(horaInicial));
-				
-				
 				String horaFim = horaFormatada(calculaHoraPassada( horaInicial + Task.intervaloDeHoras));
-				
 				calcularCountSQL(horaInicio, horaFim);
 				Arquivo.logCount(Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
 				ResultSet rs = Conexao.consultar(horaInicio, horaFim);
