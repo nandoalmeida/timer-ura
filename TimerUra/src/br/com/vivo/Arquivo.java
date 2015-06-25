@@ -17,7 +17,6 @@ import jcifs.smb.SmbFile;
 import jcifs.smb.SmbFileOutputStream;
 
 public class Arquivo {
-	/*okok90*/
 	public static File log;
 	public static File logDelete;
 	public static SmbFile fileSmb;
@@ -37,7 +36,6 @@ public class Arquivo {
 	public static Long countLinesRemote;
 
 	public static void criarInstanciaFileSmb() {
-		/*teste*/
 		try {
 			auth = new NtlmPasswordAuthentication(dominio, name, password);
 			url = "smb://" + servidor + pasta + nomeArquivoFormatado();
