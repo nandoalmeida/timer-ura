@@ -36,6 +36,7 @@ public class Arquivo {
 	public static Long countLinesRemote;
 
 	public static void criarInstanciaFileSmb() {
+		/*teste*/
 		try {
 			auth = new NtlmPasswordAuthentication(dominio, name, password);
 			url = "smb://" + servidor + pasta + nomeArquivoFormatado();
