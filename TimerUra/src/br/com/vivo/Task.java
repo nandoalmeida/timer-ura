@@ -9,6 +9,7 @@ class Task extends TimerTask {
 	public static final int intervaloDeHoras = 3;
 	public static final int horaInicialDoDia = 0;
 	public static final int horasAntes = 6;
+	public static final int quantidadeDeUltimasHorasAAvaliar = 24;
 
 	public Task() {
 		preencheVetor();
@@ -62,24 +63,23 @@ class Task extends TimerTask {
 	}
 
 	private void corrigirArquivosAusentes() {
-		int horaAusente = verificarSeArquivosForamGerados();
-		log("------------------------------------------------------");
-		if (horaAusente < 0) {
+		Calendar arquivoAusente = verificarSeArquivosDasUltimasHorasForamGerados(quantidadeDeUltimasHorasAAvaliar);
+		log("----------------------------------------------------------------------");
+		if (arquivoAusente == null) {
 			log("Todos os arquivos do dia foram gerados corretamente até agora. \r\n \r\n");
 		} else {
-			log("Arquivo " + Arquivo.nomeArquivoFormatado(horaAusente) + " será gerado fora da hora marcada.");
-			log("Início da geração do arquivo " + Arquivo.nomeArquivoFormatado(horaAusente) + ".");
-			gerarArquivoAusente(horaAusente);
-			log("Fim da geração do arquivo " + Arquivo.nomeArquivoFormatado(horaAusente) + ".");
-			log("------------------------------------------------------");
+			log("Arquivo " + Arquivo.nomeArquivoFormatado(arquivoAusente) + " será gerado fora da hora marcada.");
+			log("Início da geração do arquivo " + Arquivo.nomeArquivoFormatado(arquivoAusente) + ".");
+			gerarArquivoAusente(arquivoAusente);
+			log("Fim da geração do arquivo " + Arquivo.nomeArquivoFormatado(arquivoAusente) + ".");
+			log("----------------------------------------------------------------------");
 		}
 	}
 
 	private void copiarDoLocalParaARede() {
 		if (Arquivo.copiarDoLocalParaRede()) {
 			log("O arquivo já foi copiado com sucesso para a pasta na rede.");
-			log("-----------------------------------------------------------");
-
+			log("----------------------------------------------------------------------");
 		} else {
 			log("Falha no momento de copiar o arquivo para a pasta na rede.");
 		}
@@ -96,25 +96,35 @@ class Task extends TimerTask {
 		return false;
 	}
 
-	public int verificarSeArquivosForamGerados() {
-		int retorno = -1;
-		Calendar dataAtual = Calendar.getInstance();
-		int horaAtual = dataAtual.get(Calendar.HOUR_OF_DAY);
-		log("...  \r\n \r\n");
-		log("------------------------------------------------------");
-		log("Verificando se hoje os arquivos foram gerados corretamente ... [Aguarde]");
-
-		for (int i = 0; ((i < horasAgendadas.length) && (horasAgendadas[i] < horaAtual)); i++) {
-			if (verificarSeArquivoExiste(Arquivo.nomeArquivoFormatado(horasAgendadas[i]))) {
-				log("Arquivo " + Arquivo.nomeArquivoFormatado(horasAgendadas[i]) + " já existe na rede.");
-			} else {
-				log("Hoje, houve um problema na geração dos arquivos e será corrigido.");
-				log("Arquivo " + Arquivo.nomeArquivoFormatado(horasAgendadas[i]) + " ainda não existe na rede.");
-				return horasAgendadas[i];
+	private boolean horaMarcada(Calendar data) {
+		int hora = data.get(Calendar.HOUR_OF_DAY);
+		for (int i = 0; i < horasAgendadas.length; i++) {
+			if (horasAgendadas[i] == hora) {
+				return true;
 			}
 		}
-		log("Hoje, todos arquivos foram gerados corretamente até agora.");
-		return retorno;
+		return false;
+	}
+
+	public Calendar verificarSeArquivosDasUltimasHorasForamGerados(int quantidadeDeUltimasHorasAAvaliar) {
+		log("----------------------------------------------------------------------");
+		log("Verificando se os arquivos das últimas " + quantidadeDeUltimasHorasAAvaliar + " horas foram gerados corretamente ... [Aguarde]");
+		Calendar dataProgramada = Calendar.getInstance();
+		for (int hora = quantidadeDeUltimasHorasAAvaliar; hora > horasAntes; hora--) {
+			dataProgramada = Calendar.getInstance();
+			dataProgramada.add(Calendar.HOUR_OF_DAY, -hora);
+			if (horaMarcada(dataProgramada)) {
+				if (verificarSeArquivoExiste(Arquivo.nomeArquivoFormatado(dataProgramada))) {
+					log("Arquivo " + Arquivo.nomeArquivoFormatado(dataProgramada) + " já existe na rede.");
+				} else {
+					log("Houve um problema na geração dos arquivos e será corrigido.");
+					log("Arquivo " + Arquivo.nomeArquivoFormatado(dataProgramada) + " ainda não existe na rede.");
+					return dataProgramada;
+				}
+			}
+		}
+		log("Todos arquivos foram gerados corretamente até agora.");
+		return null;
 	}
 
 	public void gerarArquivoAusente(int horaInicial) {
@@ -122,6 +132,17 @@ class Task extends TimerTask {
 			Relatorio.gerarArquivoAusente(horaInicial);
 			copiarDoLocalParaARede();
 			deletarArquivoLocal();
+		} catch (SQLException e) {
+			log(e.getMessage());
+			Arquivo.deletarArquivoRemoto();
+		}
+	}
+
+	public void gerarArquivoAusente(Calendar arquivoAusente) {
+		try {
+			Relatorio.gerarArquivoAusente(arquivoAusente);
+			copiarDoLocalParaARede();
+			deletarArquivoLocal(arquivoAusente);
 		} catch (SQLException e) {
 			log(e.getMessage());
 		}
@@ -153,6 +174,10 @@ class Task extends TimerTask {
 
 	private void deletarArquivoLocal() {
 		Arquivo.deletarArquivoLocal();
+	}
+
+	private void deletarArquivoLocal(Calendar arquivoAusente) {
+		Arquivo.deletarArquivoLocal(arquivoAusente);
 	}
 
 }

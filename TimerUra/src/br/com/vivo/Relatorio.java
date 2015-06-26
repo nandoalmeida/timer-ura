@@ -55,7 +55,7 @@ public class Relatorio {
 				Arquivo.logCount(countSQL.toString());
 				countLinesLocal = 0L;
 				if (Conexao.isConnected) {
-					Arquivo.log("-------------------------------------------------------");
+					Arquivo.log("----------------------------------------------------------------------");
 					Arquivo.log("Início do preenchimento do arquivo local. [Aguarde ...]");
 					try {
 						FileWriter writer = new FileWriter(Arquivo.nomeArquivo);
@@ -103,7 +103,7 @@ public class Relatorio {
 						}
 						writer.close();
 						Arquivo.log("Arquivo local temporário foi criado");
-						Arquivo.log("-------------------------------------------------------");
+						Arquivo.log("----------------------------------------------------------------------");
 						Arquivo.logCount(countLinesLocal.toString());
 					} catch (IOException e) {
 						Arquivo.log(e.getMessage());
@@ -130,7 +130,7 @@ public class Relatorio {
 				Arquivo.logCount(countSQL.toString());
 				countLinesLocal = 0L;
 				if (Conexao.isConnected) {
-					Arquivo.log("-------------------------------------------------------");
+					Arquivo.log("----------------------------------------------------------------------");
 					Arquivo.log("Início do preenchimento do arquivo local. [Aguarde ...]");
 					try {
 						FileWriter writer = new FileWriter(Arquivo.nomeArquivo);
@@ -178,7 +178,90 @@ public class Relatorio {
 						}
 						writer.close();
 						Arquivo.log("Arquivo local temporário foi criado");
-						//Arquivo.log("-------------------------------------------------------");
+						Arquivo.logCount(countLinesLocal.toString()+"\r\n");
+					} catch (IOException e) {
+						Arquivo.log(e.getMessage());
+					} finally {
+						Conexao.closeConnnection();
+					}
+				} else {
+					Arquivo.log("Houve um problema na conexão com o banco de dados.");
+				}
+			}
+		} else {
+			Arquivo.log("Houve um problema na conexão de rede.");
+		}
+	}
+	
+	
+	public static void gerarArquivoAusente(Calendar arquivoAusente) throws SQLException {
+		if (Arquivo.conexaoDeRede) {
+			if (!Arquivo.existe()) {
+				String horaInicio = horaFormatada(arquivoAusente);
+				Calendar horaFimCalendar = Calendar.getInstance();
+				int nrHoraFim = arquivoAusente.get(Calendar.HOUR_OF_DAY) + Task.intervaloDeHoras;
+				
+				horaFimCalendar.set(Calendar.DAY_OF_MONTH,arquivoAusente.get(Calendar.DAY_OF_MONTH));
+				horaFimCalendar.set(Calendar.HOUR_OF_DAY,nrHoraFim);
+				horaFimCalendar.set(Calendar.MONTH,arquivoAusente.get(Calendar.MONTH));
+				horaFimCalendar.set(Calendar.SECOND,arquivoAusente.get(Calendar.SECOND));
+				horaFimCalendar.set(Calendar.MINUTE,arquivoAusente.get(Calendar.MINUTE));
+				
+				String horaFim = horaFormatada(horaFimCalendar);
+				calcularCountSQL(horaInicio, horaFim);
+				Arquivo.logCount(Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
+				ResultSet rs = Conexao.consultar(horaInicio, horaFim);
+				Arquivo.logCount(countSQL.toString());
+				countLinesLocal = 0L;
+				if (Conexao.isConnected) {
+					Arquivo.log("----------------------------------------------------------------------");
+					Arquivo.log("Início do preenchimento do arquivo local. [Aguarde ...]");
+					try {
+						FileWriter writer = new FileWriter(Arquivo.nomeArquivo);
+						writer.append("CHM_TIME,");
+						writer.append("\"CHM_ANI\",");
+						writer.append("\"CHM_NUMINFOR\",");
+						writer.append("\"RAMAL\",");
+						writer.append("\"LOGINDAC\",");
+						writer.append("\"NOTA\",");
+						writer.append("\"TIPO_CLIENTE\",");
+						writer.append("\"SEGMENTO_CLIENTE\",");
+						writer.append("\"REGIONAL\",");
+						writer.append("\"SOLICITACAO_ATENDIDA\",");
+						writer.append("\"NOTA_CONFIRMADA\",");
+						writer.append("\"HUNT_EXTENSION\",");
+						writer.append("\"OUTBOUND\",");
+						writer.append("\"PROTOCOLO_ATENDIMENTO\",");
+						writer.append("\"STATUS_ABORDAGEM\",");
+						writer.append("\"STATUS_DERIVACAO\",");
+						writer.append("\"CHM_IDSITE\"");
+						writer.append("\r\n");
+						if (rs != null) {
+							while (rs.next()) {
+								writer.append(escreveValorColunaDate(rs, "CHM_TIME", ","));
+								writer.append(escreveValorColunaString(rs, "CHM_ANI", ","));
+								writer.append(escreveValorColunaString(rs, "CHM_NUMINFOR", ","));
+								writer.append(escreveValorColunaString(rs, "RAMAL", ","));
+								writer.append(escreveValorColunaString(rs, "LOGINDAC", ","));
+								writer.append(escreveValorColunaString(rs, "NOTA", ","));
+								writer.append(escreveValorColunaString(rs, "TIPO_CLIENTE", ","));
+								writer.append(escreveValorColunaString(rs, "SEGMENTO_CLIENTE", ","));
+								writer.append(escreveValorColunaString(rs, "REGIONAL", ","));
+								writer.append(escreveValorColunaString(rs, "SOLICITACAO_ATENDIDA", ","));
+								writer.append(escreveValorColunaString(rs, "NOTA_CONFIRMADA", ","));
+								writer.append(escreveValorColunaString(rs, "HUNT_EXTENSION", ","));
+								writer.append(escreveValorColunaString(rs, "OUTBOUND", ","));
+								writer.append(escreveValorColunaString(rs, "PROTOCOLO_ATENDIMENTO", ","));
+								writer.append(escreveValorColunaString(rs, "STATUS_ABORDAGEM", ","));
+								writer.append(escreveValorColunaString(rs, "STATUS_DERIVACAO", ","));
+								writer.append(escreveValorColunaString(rs, "CHM_IDSITE", ""));
+								writer.append("\r\n");
+								writer.flush();
+								countLinesLocal++;
+							}
+						}
+						writer.close();
+						Arquivo.log("Arquivo local temporário foi criado");
 						Arquivo.logCount(countLinesLocal.toString());
 					} catch (IOException e) {
 						Arquivo.log(e.getMessage());
@@ -193,6 +276,7 @@ public class Relatorio {
 			Arquivo.log("Houve um problema na conexão de rede.");
 		}
 	}
+	
 
 	private static void calcularCountSQL(String horaInicio, String horaFim) throws SQLException {
 		ResultSet rsCount = Conexao.consultarCount(horaInicio, horaFim);
@@ -224,6 +308,8 @@ public class Relatorio {
 	
 
 	private static String horaFormatada(Calendar c) {
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND, 0);
 		DateFormat dtHora = DateFormat.getDateTimeInstance();
 		return dtHora.format(c.getTime());
 	}

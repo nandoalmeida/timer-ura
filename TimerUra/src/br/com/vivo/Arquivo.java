@@ -176,6 +176,15 @@ public class Arquivo {
 		nomeArquivo = d + m + h + "." + extensao;
 		return nomeArquivo;
 	}
+	public static String nomeArquivoFormatado(Calendar c) {
+		calendar = c;
+		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
+		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
+		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
+		nomeArquivo = d + m + h + "." + extensao;
+		return nomeArquivo;
+	}
+	
 
 	public static String nomeArquivoLog() {
 		Calendar c = Calendar.getInstance();
@@ -205,6 +214,23 @@ public class Arquivo {
 		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
 		return d + m + h + "." + extensao;
 	}
+	
+	public static String nomeArquivoExcelASerRemovido(Calendar arquivoAusente) {
+		Calendar c = Calendar.getInstance();
+		
+		c.set(Calendar.DAY_OF_MONTH,arquivoAusente.get(Calendar.DAY_OF_MONTH));
+		c.set(Calendar.HOUR_OF_DAY,arquivoAusente.get(Calendar.HOUR_OF_DAY));
+		c.set(Calendar.MONTH,arquivoAusente.get(Calendar.MONTH));
+		c.set(Calendar.SECOND,arquivoAusente.get(Calendar.SECOND));
+		c.set(Calendar.MINUTE,arquivoAusente.get(Calendar.MINUTE));
+		c.add(Calendar.MONTH, -1);
+		
+		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
+		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
+		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
+		return d + m + h + "." + extensao;
+	}
+	
 
 	public static boolean copiarDoLocalParaRede() {
 		File file = null;
@@ -215,9 +241,9 @@ public class Arquivo {
 		boolean copiaRelizadaComSucesso = true;
 		try {
 			if (!fileSmb.exists()) {
-				Arquivo.log("-------------------------------------------------------");
+				Arquivo.log("----------------------------------------------------------------------");
 				log("Arquivo " + fileSmb.getName() + " não existe na pasta da rede.");
-				log("A cópia do arquivo para a rede iniciou.");
+				log("A cópia do arquivo para a rede iniciou ... [Aguarde]");
 				byte[] buf;
 				int len;
 				buf = new byte[32 * 1024 * 1024];
@@ -244,9 +270,9 @@ public class Arquivo {
 					deletarArquivoRemoto();
 				} finally {
 					log("A cópia do arquivo para a rede finalizou.");
-					log("------------------------------------------------------");
+					log("----------------------------------------------------------------------");
 					copiaRelizadaComSucesso = validarTamanho(tamanhoArquivoRemotoEmBytes, tamanhoArquivoLocalEmBytes);
-					log("------------------------------------------------------");
+					log("----------------------------------------------------------------------");
 				}
 			} else {
 				log("Arquivo já existia na pasta da rede");
@@ -290,6 +316,23 @@ public class Arquivo {
 		return retorno;
 
 	}
+	
+	public static boolean deletarArquivoLocal(Calendar arquivoAusente) {
+		boolean retorno = true;
+		File file = new File(nomeArquivoExcelASerRemovido(arquivoAusente));
+		if (file.exists()) {
+			if (file.delete()) {
+				retorno = true;
+				log("Arquivo local foi deletado com sucesso !");
+			} else {
+				retorno = false;
+				log("Arquivo local não pode ser deletado !");
+			}
+		}
+		return retorno;
+
+	}
+	
 
 	public static void deletarArquivoRemoto() {
 		log("Arquivo remoto será removido.");
