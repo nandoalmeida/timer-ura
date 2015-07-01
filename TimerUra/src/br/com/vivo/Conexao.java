@@ -26,7 +26,7 @@ public class Conexao {
 	private static String nomeDeServico = "AVAYAPR1";
 	private static Connection con = null;
 
-	public static Connection getConnection() throws SQLException {
+	public static Connection getConnection() {
 
 		try {
 			Arquivo.log("Tentando conectar com o banco de dados ... [Aguarde]");

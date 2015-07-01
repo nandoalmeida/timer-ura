@@ -26,8 +26,11 @@ public class Arquivo {
 	private static String password = "Usuarios2013sim";
 	private static String servidor = "10.128.222.105";
 	private static String pasta = "/ura/teste/";
+	public static String pastaLocal = "arquivos_csv/";
 
 	public static String nomeArquivo;
+	public static String nomeArquivoLog;
+	public static String nomeArquivoTmp;
 	private static String extensao = "csv";
 	public static Calendar calendar;
 
@@ -37,6 +40,7 @@ public class Arquivo {
 
 	public static void criarInstanciaFileSmb() {
 		try {
+			conexaoDeRede = true;
 			auth = new NtlmPasswordAuthentication(dominio, name, password);
 			url = "smb://" + servidor + pasta + nomeArquivoFormatado();
 			fileSmb = new SmbFile(url, auth);
@@ -70,7 +74,7 @@ public class Arquivo {
 				Arquivo.log("Arquivo " + nomeArquivoLogASerRemovido() + " não existe.");
 			}
 			Arquivo.log("Arquivo de log " + nomeArquivoLog() + " foi criado.");
-		} 
+		}
 	}
 
 	public static void log(String linha) {
@@ -176,6 +180,7 @@ public class Arquivo {
 		nomeArquivo = d + m + h + "." + extensao;
 		return nomeArquivo;
 	}
+
 	public static String nomeArquivoFormatado(Calendar c) {
 		calendar = c;
 		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
@@ -184,15 +189,14 @@ public class Arquivo {
 		nomeArquivo = d + m + h + "." + extensao;
 		return nomeArquivo;
 	}
-	
 
 	public static String nomeArquivoLog() {
 		Calendar c = Calendar.getInstance();
 		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
 		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
 		String a = String.format("%02d", c.get(Calendar.YEAR));
-		nomeArquivo = "LOG_" + a + "_" + m + "_" + d + ".txt";
-		return nomeArquivo;
+		nomeArquivoLog = "LOG_" + a + "_" + m + "_" + d + ".txt";
+		return nomeArquivoLog;
 	}
 
 	public static String nomeArquivoLogASerRemovido() {
@@ -201,8 +205,8 @@ public class Arquivo {
 		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
 		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
 		String a = String.format("%02d", c.get(Calendar.YEAR));
-		nomeArquivo = "LOG_" + a + "_" + m + "_" + d + ".txt";
-		return nomeArquivo;
+		nomeArquivoLog = "LOG_" + a + "_" + m + "_" + d + ".txt";
+		return nomeArquivoLog;
 	}
 
 	public static String nomeArquivoExcelASerRemovido() {
@@ -214,69 +218,111 @@ public class Arquivo {
 		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
 		return d + m + h + "." + extensao;
 	}
-	
+
 	public static String nomeArquivoExcelASerRemovido(Calendar arquivoAusente) {
 		Calendar c = Calendar.getInstance();
-		
-		c.set(Calendar.DAY_OF_MONTH,arquivoAusente.get(Calendar.DAY_OF_MONTH));
-		c.set(Calendar.HOUR_OF_DAY,arquivoAusente.get(Calendar.HOUR_OF_DAY));
-		c.set(Calendar.MONTH,arquivoAusente.get(Calendar.MONTH));
-		c.set(Calendar.SECOND,arquivoAusente.get(Calendar.SECOND));
-		c.set(Calendar.MINUTE,arquivoAusente.get(Calendar.MINUTE));
-		c.add(Calendar.MONTH, -1);
-		
+
+		c.set(Calendar.DAY_OF_MONTH, arquivoAusente.get(Calendar.DAY_OF_MONTH));
+		c.set(Calendar.HOUR_OF_DAY, arquivoAusente.get(Calendar.HOUR_OF_DAY));
+		c.set(Calendar.MONTH, arquivoAusente.get(Calendar.MONTH));
+		c.set(Calendar.SECOND, arquivoAusente.get(Calendar.SECOND));
+		c.set(Calendar.MINUTE, arquivoAusente.get(Calendar.MINUTE));
+		// c.add(Calendar.MONTH, -1);
+
 		String d = String.format("%02d", c.get(Calendar.DAY_OF_MONTH));
 		String m = String.format("%02d", (c.get(Calendar.MONTH) + 1));
 		String h = String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
 		return d + m + h + "." + extensao;
 	}
-	
 
 	public static boolean copiarDoLocalParaRede() {
 		File file = null;
-		file = new File(Arquivo.nomeArquivo);
-		InputStream fileInputStream;
+		file = new File(Arquivo.pastaLocal + Arquivo.nomeArquivo);
+		InputStream fileInputStream = null;
+		SmbFileOutputStream smbFileOutputStream = null;
 		Long tamanhoArquivoRemotoEmBytes = 0L;
 		Long tamanhoArquivoLocalEmBytes = file.length();
 		boolean copiaRelizadaComSucesso = true;
 		try {
-			if (!fileSmb.exists()) {
-				Arquivo.log("----------------------------------------------------------------------");
-				log("Arquivo " + fileSmb.getName() + " não existe na pasta da rede.");
-				log("A cópia do arquivo para a rede iniciou ... [Aguarde]");
-				byte[] buf;
-				int len;
-				buf = new byte[32 * 1024 * 1024];
-				try {
-					SmbFileOutputStream smbFileOutputStream = new SmbFileOutputStream(fileSmb);
-					fileInputStream = new FileInputStream(file.getAbsolutePath());
-					while ((len = fileInputStream.read(buf)) > 0) {
-						smbFileOutputStream.write(buf, 0, len);
+			fileSmb.exists();
+			// if (!fileSmb.exists()) {
+			Arquivo.log("----------------------------------------------------------------------");
+			// log("Arquivo " + fileSmb.getName() +
+			// " não existe na pasta da rede.");
+			log("A cópia do arquivo para a rede iniciou ... [Aguarde]");
+			byte[] buf;
+			int len;
+			buf = new byte[32 * 1024 * 1024];
+			try {
+				smbFileOutputStream = new SmbFileOutputStream(fileSmb);
+				fileInputStream = new FileInputStream(file.getAbsolutePath());
+
+				System.out.println("len: null  buf: " + buf.length);
+
+				while ((len = fileInputStream.read(buf)) > 0) {
+					System.out.println("len: " + len + "buf: " + buf.length);
+
+					smbFileOutputStream.write(buf, 0, len);
+
+				}
+				tamanhoArquivoRemotoEmBytes = fileSmb.length();
+				fileInputStream.close();
+				smbFileOutputStream.close();
+			} catch (MalformedURLException e) {
+				if (fileInputStream != null) {
+					try {
+						fileInputStream.close();
+						smbFileOutputStream.close();
+					} catch (IOException e1) {
+						log(e1.getMessage());
 					}
-					tamanhoArquivoRemotoEmBytes = fileSmb.length();
-					fileInputStream.close();
-					smbFileOutputStream.close();
-				} catch (MalformedURLException e) {
+				}
+				copiaRelizadaComSucesso = false;
+				tamanhoArquivoRemotoEmBytes = fileSmb.length();
+				log(e.getMessage());
+				deletarArquivoRemoto();
+			} catch (FileNotFoundException e) {
+				if (fileInputStream != null) {
+					try {
+						fileInputStream.close();
+						smbFileOutputStream.close();
+					} catch (IOException e1) {
+						log(e1.getMessage());
+					}
+				}
+				copiaRelizadaComSucesso = false;
+				tamanhoArquivoRemotoEmBytes = fileSmb.length();
+				log(e.getMessage());
+				deletarArquivoRemoto();
+			} catch (IOException e) {
+				if (fileInputStream != null) {
+					try {
+						fileInputStream.close();
+						smbFileOutputStream.close();
+					} catch (IOException e1) {
+						log(e1.getMessage());
+					}
+				}
+				copiaRelizadaComSucesso = false;
+				tamanhoArquivoRemotoEmBytes = fileSmb.length();
+				log(e.getMessage());
+				deletarArquivoRemoto();
+			} finally {
+				tamanhoArquivoRemotoEmBytes = fileSmb.length();
+				if (tamanhoArquivoLocalEmBytes.equals(0L)) {
 					copiaRelizadaComSucesso = false;
-					log(e.getMessage());
+					log("Houve um problema na geração local do arquivo, portanto não foi copiado para a rede.");
 					deletarArquivoRemoto();
-				} catch (FileNotFoundException e) {
-					copiaRelizadaComSucesso = false;
-					log(e.getMessage());
-					deletarArquivoRemoto();
-				} catch (IOException e) {
-					copiaRelizadaComSucesso = false;
-					log(e.getMessage());
-					deletarArquivoRemoto();
-				} finally {
+				} else {
 					log("A cópia do arquivo para a rede finalizou.");
 					log("----------------------------------------------------------------------");
 					copiaRelizadaComSucesso = validarTamanho(tamanhoArquivoRemotoEmBytes, tamanhoArquivoLocalEmBytes);
 					log("----------------------------------------------------------------------");
 				}
-			} else {
-				log("Arquivo já existia na pasta da rede");
 			}
+			/*
+			 * } else { log("Arquivo já existia na pasta da rede"); }
+			 */
 		} catch (SmbException e) {
 			copiaRelizadaComSucesso = false;
 			log(e.getMessage());
@@ -303,7 +349,26 @@ public class Arquivo {
 
 	public static boolean deletarArquivoLocal() {
 		boolean retorno = true;
-		File file = new File(nomeArquivoExcelASerRemovido());
+		// File file = new File(nomeArquivoExcelASerRemovido());
+		File file = new File(pastaLocal + fileSmb.getName());
+		if (file.exists()) {
+			// file.setWritable(true);
+			if (file.delete()) {
+				retorno = true;
+				log("Arquivo local foi deletado com sucesso !");
+			} else {
+				retorno = false;
+				log("Arquivo local não pode ser deletado !");
+			}
+		}
+		return retorno;
+
+	}
+
+	public static boolean deletarArquivoLocal(String nomeArquivo) {
+		boolean retorno = true;
+		// File file = new File(nomeArquivoExcelASerRemovido());
+		File file = new File(pastaLocal + nomeArquivo);
 		if (file.exists()) {
 			if (file.delete()) {
 				retorno = true;
@@ -316,10 +381,10 @@ public class Arquivo {
 		return retorno;
 
 	}
-	
+
 	public static boolean deletarArquivoLocal(Calendar arquivoAusente) {
 		boolean retorno = true;
-		File file = new File(nomeArquivoExcelASerRemovido(arquivoAusente));
+		File file = new File(pastaLocal + nomeArquivoExcelASerRemovido(arquivoAusente));
 		if (file.exists()) {
 			if (file.delete()) {
 				retorno = true;
@@ -332,7 +397,6 @@ public class Arquivo {
 		return retorno;
 
 	}
-	
 
 	public static void deletarArquivoRemoto() {
 		log("Arquivo remoto será removido.");
@@ -375,17 +439,28 @@ public class Arquivo {
 		return buf;
 	}
 
-	public static boolean verificarSeArquivoExiste(String nomeArquivo) {
-		boolean result = false;
+	public static int verificarSeArquivoExiste(String lnomeArquivo) {
+		conexaoDeRede = true;
+		int result = -1;
 		auth = new NtlmPasswordAuthentication(dominio, name, password);
-		url = "smb://" + servidor + pasta + nomeArquivo;
+		url = "smb://" + servidor + pasta + lnomeArquivo;
+		nomeArquivo = lnomeArquivo;
 		try {
 			fileSmb = new SmbFile(url, auth);
-			result = fileSmb.exists();
+			if (fileSmb.exists()) {
+				result = 1;
+			} else {
+				result = 0;
+			}
 		} catch (SmbException e) {
+			conexaoDeRede = false;
 			log(e.getMessage());
 		} catch (MalformedURLException e) {
+			conexaoDeRede = false;
 			log(e.getMessage());
+		} catch (Exception e2) {
+			conexaoDeRede = false;
+			log(e2.getMessage());
 		}
 		return result;
 	}
