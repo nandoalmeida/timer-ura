@@ -52,7 +52,7 @@ public class Relatorio {
 				String horaInicio = horaFormatada(calculaHora(-Task.horasAntes));
 				String horaFim = horaFormatada(calculaHora(-(Task.horasAntes - Task.intervaloDeHoras)));
 				calcularCountSQL(horaInicio, horaFim);
-				Arquivo.logCount(Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
+				Arquivo.logCount("\r\n" + Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
 				ResultSet rs = Conexao.consultar(horaInicio, horaFim);
 				Arquivo.logCount(countSQL.toString());
 				countLinesLocal = 0L;
@@ -256,7 +256,7 @@ public class Relatorio {
 				
 				
 				calcularCountSQL(horaInicio, horaFim);
-				Arquivo.logCount(Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
+				Arquivo.logCount("\r\n" + Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
 				ResultSet rs = Conexao.consultar(horaInicio, horaFim);
 				Arquivo.logCount(countSQL.toString());
 				countLinesLocal = 0L;
@@ -376,7 +376,7 @@ public class Relatorio {
 				
 				String horaFim = horaFormatada(horaFimCalendar);
 				calcularCountSQL(horaInicio, horaFim);
-				Arquivo.logCount(Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
+				Arquivo.logCount("\r\n" + Calendar.getInstance().getTime() + " - " + Arquivo.nomeArquivo);
 				ResultSet rs = Conexao.consultar(horaInicio, horaFim);
 				Arquivo.logCount(countSQL.toString());
 				countLinesLocal = 0L;
